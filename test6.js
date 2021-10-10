@@ -136,7 +136,7 @@ it ('"Ime" is marked as Mandatory', async ()=>{
                 return true;}, 
                 
                 function(err) {
-                if (err instanceof driver.error.NoSuchElementError) {
+                if (err.name == "NoSuchElementError") {
                     //console.log('--->>>> Element NIJE pronadjen.')
                     return false;//it was not found
                 } 
@@ -157,7 +157,7 @@ it ('"Prezime" is marked as Mandatory', async ()=>{
                 return true;}, 
                 
                 function(err) {
-                if (err instanceof driver.error.NoSuchElementError) {
+                if (err.name == "NoSuchElementError") {
                     console.log('--->>>> Element NIJE pronadjen.')
                     return false;//it was not found
                 } 
@@ -181,7 +181,7 @@ it ('"Elektronska pošta" is marked as Mandatory', async ()=>{
                 return true;}, 
                 
                 function(err) {
-                if (err instanceof driver.error.NoSuchElementError) {
+                if (err.name == "NoSuchElementError") {
                     console.log('--->>>> Element NIJE pronadjen.')
                     return false;//it was not found
                 } 
@@ -202,7 +202,7 @@ it ('"Lozinka" is marked as Mandatory', async ()=>{
                 return true;}, 
                 
                 function(err) {
-                if (err instanceof driver.error.NoSuchElementError) {
+                if (err.name == "NoSuchElementError") {
                     console.log('--->>>> Element NIJE pronadjen.')
                     return false;//it was not found
                 } 
@@ -223,7 +223,7 @@ it ('"Potvrdite lozinku" is marked as Mandatory', async ()=>{
                 return true;}, 
                 
                 function(err) {
-                if (err instanceof driver.error.NoSuchElementError) {
+                if (err.name == "NoSuchElementError") {
                     console.log('--->>>> Element NIJE pronadjen.')
                     return false;//it was not found
                 } 
