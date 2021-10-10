@@ -20,7 +20,7 @@ driver.get(URL);
 describe("Enter valid data in every input registration field", function() {
     this.timeout(30000);
 
-// Aktivirati u finalnoj verziji 
+// Opcija 
 //     beforeEach(async () => {
 //       
 //       await driver.get(URL);
@@ -31,7 +31,7 @@ describe("Enter valid data in every input registration field", function() {
     // })
 
 
-    it ('Entering ALL valid data for Private type registration - NO ERRORS', async ()=>{
+    it ('Entering ALL valid data for Private/Personal type registration - NO ERRORS', async ()=>{
 
       myWindowHandle = driver.getWindowHandle();
     
@@ -77,6 +77,10 @@ describe("Enter valid data in every input registration field", function() {
       assert.equal(ispravnaReg, actRegistracija);
   })
 
+  it ('Exiting', async ()=>{
+
+    await driver.quit();
+    })
 
   });
 

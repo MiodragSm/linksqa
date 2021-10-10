@@ -42,104 +42,102 @@ describe("Sanity Check - All required registration fields present", function() {
 
 
 
-    it ('Checking - Checkbox "Želim se registrirati kao pravna osoba"', async ()=>{
+        it ('Checking - Checkbox "Želim se registrirati kao pravna osoba"', async ()=>{
 
-
- 
-
-  var existed = await driver.findElement(By.xpath("//input[@name='RegisterAsCompany']"))
-  .then(function() {
-    console.log('---> Element pronadjen.')
-    return true;}, function(err) {
-    if (err instanceof driver.error.NoSuchElementError) {
-        console.log('--->>>> Element NIJE pronadjen.')
-        return false;//it was not found
-    } else {
-        driver.promise.rejected(err)
-            }
-        })
+        var existed = await driver.findElement(By.xpath("//input[@name='RegisterAsCompany']"))
+        .then(function() {
+            //console.log('---> Element pronadjen.')
+            return true;}, function(err) {
+            if (err instanceof driver.error.NoSuchElementError) {
+                console.log('--->>>> Element NIJE pronadjen.')
+                return false;//it was not found
+            } else {
+                driver.promise.rejected(err)
+                    }
+                })
     });
 
 
     it ('Checking - Ime', async ()=>{
 
-        //var existed = await driver.findElement(By.xpath("//input[@id='gender-male']"))
-        //var existed = await driver.findElement(By.xpath("//*[@id='gender-male']"))
-        //var existed = await driver.findElement(By.xpath("//div[@class='gender'][1]/input[1]"))
-        //var existed = await driver.findElement(By.xpath("//div[@class='gender'][1]/label[1]"))
-
-        var existed = await driver.findElement(By.xpath("//input[@name='FirstName']"))
-    .then(function() {
-      console.log('---> Element pronadjen.')
-      return true;}, function(err) {
-      if (err instanceof driver.error.NoSuchElementError) {
-          console.log('--->>>> Element NIJE pronadjen.')
-          return false;//it was not found
-      } else {
-          driver.promise.rejected(err)
-              }
-          })
+            var existed = await driver.findElement(By.xpath("//input[@name='FirstName']"))
+        .then(function() {
+        //console.log('---> Element pronadjen.')
+        return true;}, function(err) {
+        if (err instanceof driver.error.NoSuchElementError) {
+            console.log('--->>>> Element NIJE pronadjen.')
+            return false;//it was not found
+        } else {
+            driver.promise.rejected(err)
+                }
+            })
       });
 
 
     it ('Checking - Prezime', async ()=>{
-        var existed = await driver.findElement(By.xpath("//input[@id='LastName']"))
-    .then(function() {
-      console.log('---> Element pronadjen.')
-      return true;}, function(err) {
-      if (err instanceof driver.error.NoSuchElementError) {
-          console.log('--->>>> Element NIJE pronadjen.')
-          return false;//it was not found
-      } else {
-          driver.promise.rejected(err)
-              }
-          })
+            var existed = await driver.findElement(By.xpath("//input[@id='LastName']"))
+        .then(function() {
+        //console.log('---> Element pronadjen.')
+        return true;}, function(err) {
+        if (err instanceof driver.error.NoSuchElementError) {
+            console.log('--->>>> Element NIJE pronadjen.')
+            return false;//it was not found
+        } else {
+            driver.promise.rejected(err)
+                }
+            })
       });
 
       it ('Checking - E-mail', async ()=>{
-        var existed = await driver.findElement(By.xpath("//input[@name='Email']"))
-    .then(function() {
-      console.log('---> Element pronadjen.')
-      return true;}, function(err) {
-      if (err instanceof driver.error.NoSuchElementError) {
-          console.log('--->>>> Element NIJE pronadjen.')
-          return false;//it was not found
-      } else {
-          driver.promise.rejected(err)
-              }
-          })
+            var existed = await driver.findElement(By.xpath("//input[@name='Email']"))
+        .then(function() {
+        //console.log('---> Element pronadjen.')
+        return true;}, function(err) {
+        if (err instanceof driver.error.NoSuchElementError) {
+            console.log('--->>>> Element NIJE pronadjen.')
+            return false;//it was not found
+        } else {
+            driver.promise.rejected(err)
+                }
+            })
       });
 
 
       it ('Checking - Lozinka', async ()=>{
-        var existed = await driver.findElement(By.xpath("//input[@name='Password']"))
-    .then(function() {
-      console.log('---> Element pronadjen.')
-      return true;}, function(err) {
-      if (err instanceof driver.error.NoSuchElementError) {
-          console.log('--->>>> Element NIJE pronadjen.')
-          return false;//it was not found
-      } else {
-          driver.promise.rejected(err)
-              }
-          })
+            var existed = await driver.findElement(By.xpath("//input[@name='Password']"))
+        .then(function() {
+        //console.log('---> Element pronadjen.')
+        return true;}, function(err) {
+        if (err instanceof driver.error.NoSuchElementError) {
+            console.log('--->>>> Element NIJE pronadjen.')
+            return false;//it was not found
+        } else {
+            driver.promise.rejected(err)
+                }
+            })
       });
 
 
-      it ('Checking - Potvrdite lozinkuu', async ()=>{
-        var existed = await driver.findElement(By.xpath("//input[@name='ConfirmPassword']"))
-    .then(function() {
-      console.log('---> Element pronadjen.')
-      return true;}, function(err) {
-      if (err instanceof driver.error.NoSuchElementError) {
-          console.log('--->>>> Element NIJE pronadjen.')
-          return false;//it was not found
-      } else {
-          driver.promise.rejected(err)
-              }
-          })
+    it ('Checking - Potvrdite lozinkuu', async ()=>{
+            var existed = await driver.findElement(By.xpath("//input[@name='ConfirmPassword']"))
+        .then(function() {
+        //console.log('---> Element pronadjen.')
+        return true;}, function(err) {
+        if (err instanceof driver.error.NoSuchElementError) {
+            console.log('--->>>> Element NIJE pronadjen.')
+            return false;//it was not found
+        } else {
+            driver.promise.rejected(err)
+                }
+            })
       });
 
+
+
+    it ('Exiting', async ()=>{
+
+        await driver.quit();
+    });
 
 
 
