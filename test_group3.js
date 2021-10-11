@@ -20,7 +20,7 @@ driver.get(URL);
 describe("Enter valid data in every input registration field", function() {
     this.timeout(30000);
 
-// Opcija
+// Opcija 
 //     beforeEach(async () => {
 //       
 //       await driver.get(URL);
@@ -31,25 +31,15 @@ describe("Enter valid data in every input registration field", function() {
     // })
 
 
-    it ('Entering ALL valid data for Corporate/Business type registration - NO ERRORS', async ()=>{
+    it ('Entering ALL valid data for Private/Personal type registration - NO ERRORS', async ()=>{
 
       myWindowHandle = driver.getWindowHandle();
     
-      await driver.wait(until.titleIs('Registrirajte se - Links'),5000);
+      const element = driver.wait(until.titleIs('Registrirajte se - Links'),5000);
       await driver.manage().window().maximize();
       await driver.sleep(2000);
       await driver.findElement(By.xpath("//*[@id='eu-cookie-ok']")).click();
   //Ovo mi je najbrza varijanta zbog roka, treba protrcati kroz DOM i malo ovo ulepstati/srediti, koristiti By.id gde god je moguce i sl.
-
-      await driver.findElement(By.xpath("//input[@name='RegisterAsCompany']")).click();
-      await driver.sleep(3000);
-      await driver.findElement(By.xpath("//input[@name='Company']")).sendKeys('DMZ', Key.TAB, '12345678901');      
-      await driver.findElement(By.xpath("//input[@name='CompanyEmail']")).sendKeys('dmz001@live.com', Key.TAB, '+381 66 34211528');
-      //await driver.findElement(By.xpath("//input[@name='CompanyContactPerson']")).sendKeys('Isak', Key.TAB, 'Josipa Pančića 47/b3');
-      await driver.findElement(By.xpath("//input[@name='CompanyContactPerson']")).sendKeys('Isak', Key.TAB, 'Josipa Pančića 47/b3', Key.TAB, '21 000', Key.TAB);
-      
-
-
       await driver.findElement(By.xpath("//input[@name='FirstName']")).sendKeys('Petra1');
       await driver.findElement(By.xpath("//input[@id='gender-female']")).click();
       await driver.findElement(By.xpath("//input[@name='LastName']")).sendKeys('Petrovic');
@@ -70,7 +60,7 @@ describe("Enter valid data in every input registration field", function() {
       //driver.switchTo().alert().accept());
   
       //findElement preko id-a
-      //driver.findElement(By.id("//*[@id='register-button']")).click());
+      //driver.findElement(By.id("register-button")).click());
       await driver.findElement(By.xpath("/html/body/div[5]/div[8]/div[4]/div[1]/form/div/div[3]/div[8]/input")).click();
       await driver.sleep(10000);
 

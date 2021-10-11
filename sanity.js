@@ -16,7 +16,6 @@ var randomEmail = 'petrA_' + qcast.generisiString(10) + '@live.com';  //Unique e
 console.log('Registracioni e-mail ---> ', randomEmail);
 
 driver = new Builder().forBrowser('chrome').build();
-//err instanceof driver.error.NoSuchElementError;
 
 driver.get(URL);
 
