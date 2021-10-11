@@ -16,7 +16,8 @@ var randomEmail = 'petrA_' + qcast.generisiString(10) + '@live.com';  //Unique e
 console.log('Registracioni e-mail ---> ', randomEmail);
 
 const chrome = require('selenium-webdriver/chrome');
-chrome_options = new chrome.Options().addArguments("disable-notifications"); // Iskljucuje notifikacije tokom ove sesije
+chrome_options = new chrome.Options().addArguments("disable-notifications", "-incognito"); // Iskljucuje notifikacije tokom ove incognito sesije 
+//Kompletan spisak chromium switch-eva: https://peter.sh/experiments/chromium-command-line-switches/
 driver = new Builder()
             .forBrowser('chrome')
             .setChromeOptions(chrome_options)
