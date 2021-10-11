@@ -14,7 +14,13 @@ var qcast = require ('./qcast.js');
 var randomEmail = 'petrA_' + qcast.generisiString(10) + '@live.com';  //Unique e-mail koji se koristi pri svakoj test registraciji.
 console.log('Registracioni e-mail ---> ', randomEmail);
 
-driver = new Builder().forBrowser('chrome').build();
+const chrome = require('selenium-webdriver/chrome');
+chrome_options = new chrome.Options().addArguments("disable-notifications"); // Iskljucuje notifikacije tokom ove sesije
+driver = new Builder()
+            .forBrowser('chrome')
+            .setChromeOptions(chrome_options)
+            .build();
+            
 driver.get(URL);
 
 describe("Verify that system generates a validation message when clicking on submit button without filling all the mandatory fields for PERSONAL/PRIVATE USER.", function() {
